@@ -1,10 +1,18 @@
-build/
-install/
-log/
+# Colcon outputs
+/build/
+/install/
+/log/
 
+# ROBOTIS upstream repositories reconstructed by rebuild.sh
+/src/turtlebot3/
+/src/turtlebot3_msgs/
+/src/turtlebot3_simulations/
+
+# Python generated files
 __pycache__/
 *.pyc
 *.pyo
 
+# Editor metadata
 .vscode/
 .idea/

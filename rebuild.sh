@@ -107,6 +107,7 @@ rosdep install \
         src/custom/tb3_deadman_teleop \
     --ignore-src \
     --rosdistro humble \
+    --skip-keys ament_python \
     -r \
     -y
 
