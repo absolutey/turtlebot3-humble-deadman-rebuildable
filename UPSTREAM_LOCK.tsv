@@ -1,0 +1,4 @@
+NAME	BRANCH	COMMIT	URL
+turtlebot3	humble	90a68bd2e3c61c12966779da89d8eeaec82730e9	https://github.com/ROBOTIS-GIT/turtlebot3.git
+turtlebot3_msgs	humble	cdee60f7618b9ed2f85f65259c0f96e3f02b1c55	https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+turtlebot3_simulations	humble	a35a56c8b04877dc89772b598084d8ce648a9023	https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
