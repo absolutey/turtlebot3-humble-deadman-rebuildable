@@ -68,3 +68,28 @@ This baseline deliberately does **not** install Gazebo Classic.
 The verified host already uses GZ Harmonic / `gz-tools2`, which conflicts
 at the APT-package level with Gazebo Classic 11. The fake-node + RViz
 baseline therefore stays independent of Gazebo Classic.
+
+## One-shot lifecycle
+
+The baseline uses one-shot shutdown semantics.
+
+- Normal startup remains alive continuously.
+- Releasing W/A/S/D stops velocity but does not exit.
+- Losing keyboard focus stops velocity but does not exit.
+- Closing the dead-man window, pressing `Esc`, closing RViz, or pressing
+  `Ctrl+C` shuts down the complete launch stack.
+- SIGINT/SIGTERM are bridged into the Qt event loop through a nonblocking
+  self-pipe and `QSocketNotifier`.
+- The periodic `/cmd_vel` timer is stopped before ROS teardown.
+- A final zero `/cmd_vel` is attempted before node destruction.
+- RViz and dead-man `OnProcessExit` events request LaunchService shutdown.
+
+Regression test:
+
+```bash
+./shutdown_smoke_test.sh
+```
+
+The test proves at least three seconds of startup survival, sends exactly one
+SIGINT directly to the installed dead-man executable, and requires exit within
+two seconds without `RCLError`, traceback, or SIGKILL escalation.

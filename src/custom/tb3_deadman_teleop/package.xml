@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>tb3_deadman_teleop</name>
-  <version>1.0.0</version>
+  <version>1.0.3</version>
   <description>
     Minimal host-safe TurtleBot3 Burger fake-node and dead-man keyboard teleoperation.
   </description>

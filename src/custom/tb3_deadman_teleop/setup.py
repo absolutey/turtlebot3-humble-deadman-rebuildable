@@ -8,7 +8,7 @@ package_name = "tb3_deadman_teleop"
 
 setup(
     name=package_name,
-    version="1.0.0",
+    version="1.0.3",
     packages=[package_name],
     data_files=[
         (
